@@ -23,7 +23,7 @@ The proxy configurations are done in the `Caddyfile` everything is commented for
 - Both the frontend and backend need to listen on fixed ports, in my Caddyfile I have used port `3000` in the proxy address, and configured my frontend and backend to both listen on port `3000`
     - This can be done by [configuring your frontend and backend apps to listen on the `$PORT`](https://docs.railway.app/troubleshoot/fixing-common-errors) environment variable, then setting a `PORT` service variable to `3000`
 
-- Since Railway's internal network is IPv6 only the frontend and backend apps will need listen on `::` (all interfaces - both IPv4 and IPv6)
+- Since Railway's internal network is IPv6 only the frontend and backend apps will need to listen on `::` (all interfaces - both IPv4 and IPv6)
 
     **Start commands for some popular frameworks:**
 
