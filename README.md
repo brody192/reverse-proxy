@@ -10,7 +10,7 @@ Access the frontend from `/*` and access the backend from `/api/*` on the same d
 
 **Backend - FastAPI:** https://mysite.up.railway.app/api/
 
-The proxy configurations are done in the `Caddyfile` everything is commented for your ease of use!
+The proxy configurations are done in the [`Caddyfile`](https://github.com/brody192/reverse-proxy/blob/main/Caddyfile) everything is commented for your ease of use!
 
 **Relevant Caddy documentation:**
 
