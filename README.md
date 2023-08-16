@@ -37,4 +37,4 @@ The proxy configurations are done in the [`Caddyfile`](https://github.com/brody1
 
     - **Next:** `next start -H :: --port $PORT`
 
-    - **Express/Nest:** `app.listen(PORT, "::");`
+    - **Express/Nest:** `app.listen(process.env.PORT, "::");`
