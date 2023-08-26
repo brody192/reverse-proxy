@@ -12,11 +12,11 @@ Access the frontend from `/*` and access the backend from `/api/*` on the same d
 
 The proxy configurations are done in the [`Caddyfile`](https://github.com/brody192/reverse-proxy/blob/main/Caddyfile) everything is commented for your ease of use!
 
-When deploying your Reverse Proxy service it will require you set two service variables: **FRONTEND_HOST** and **BACKEND_HOST**
+When deploying your Reverse Proxy service it will require you to set two service variables: **FRONTEND_HOST** and **BACKEND_HOST**
 
 **Note:** You will first need to have set a fixed `PORT` variable in both the frontend and backend services before deploying this template
 
-These are the two template variables that you will be required to fill out during first deployment of this service, replace the respective `<frontend service name>` and `<backend service name>` with the service names as they appear in the Railway project view
+These are the two template variables that you will be required to fill out during the first deployment of this service, replace the respective `<frontend service name>` and `<backend service name>` with the service names as they appear in the Railway project view
 
 ```
 FRONTEND_HOST = ${{<frontend service name>.RAILWAY_PRIVATE_DOMAIN}}:${{<frontend service name>.PORT}}
