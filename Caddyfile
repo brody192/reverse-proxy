@@ -1,36 +1,38 @@
+# global options
 {
-	# global options
 	admin off # theres no need for the admin api in railway's environment
 	persist_config off # storage isn't persistent anyway
 	auto_https off # railway handles https for us, this would cause issues if left enabled
+	# runtime logs
 	log {
-		# runtime logs
 		format json # set runtime log format to json mode 
 	}
+	# server options
 	servers {
-		# server options
 		trusted_proxies static private_ranges # trust railway's proxy
 	}
 }
 
+# site block, listens on the $PORT environment variable, automatically assigned by railway
 :{$PORT} {
-	# site block, listens on the $PORT environment variable, automatically assigned by railway
+	# access logs
 	log {
-		# access logs
 		format json # set access log format to json mode
 	}
 
+	# named matcher, matches the host specfied in environment variable 
 	@api_host {
-		host {$API_HOST_EXTERNAL}
+		host {$API_HOST_EXTERNAL} # match to the host value specified in this environment variable
 	}
 
-	reverse_proxy @api_host http://{$API_HOST_INTERNAL}
-	# respond @api_host "Hello, world! - api host"
+	reverse_proxy @api_host http://{$API_HOST_INTERNAL} # proxy the host matched by the named matcher to the host value specified in this environment variable
 
+	# named matcher, matches the host specfied in environment variable 
 	@web_host {
-		host {$WEB_HOST_EXTERNAL}
+		host {$WEB_HOST_EXTERNAL} # match to the host value specified in this environment variable
 	}
 
-	reverse_proxy @web_host http://{$WEB_HOST_INTERNAL}
-	# respond @web_host "Hello, world! - web host"
+	reverse_proxy @web_host http://{$WEB_HOST_INTERNAL} # proxy the host matched by the named matcher to the host value specified in this environment variable
+
+	respond "No host was matched" 404 # fallback response when no host was matched
 }
