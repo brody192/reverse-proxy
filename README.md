@@ -6,9 +6,9 @@
 
 Access the frontend from `/*` and access the backend from `/api/*` on the same domain
 
-**Frontend - React:** https://mysite.up.railway.app/
+**Frontend - Vue 3:** https://mysite.up.railway.app/
 
-**Backend - FastAPI:** https://mysite.up.railway.app/api/
+**Backend - Go Mux:** https://mysite.up.railway.app/api/
 
 The proxy configurations are done in the [`Caddyfile`](https://github.com/brody192/reverse-proxy/blob/main/Caddyfile) everything is commented for your ease of use!
 
