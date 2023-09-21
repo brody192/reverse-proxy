@@ -20,14 +20,14 @@
 		format json # set access log format to json mode
 	}
 
-	# named matcher, matches the host specfied in environment variable 
+	# named matcher, matches the host specified in environment variable 
 	@api_host {
 		host {$API_HOST_EXTERNAL} # match to the host value specified in this environment variable
 	}
 
 	reverse_proxy @api_host http://{$API_HOST_INTERNAL} # proxy the host matched by the named matcher to the host value specified in this environment variable
 
-	# named matcher, matches the host specfied in environment variable 
+	# named matcher, matches the host specified in environment variable 
 	@web_host {
 		host {$WEB_HOST_EXTERNAL} # match to the host value specified in this environment variable
 	}
