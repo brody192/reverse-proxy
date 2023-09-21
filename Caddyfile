@@ -24,13 +24,13 @@
 		host {$API_HOST_EXTERNAL}
 	}
 
-	# reverse_proxy @api_host http://{$API_HOST_INTERNAL}
-	respond @api_host "Hello, world! - api host"
+	reverse_proxy @api_host http://{$API_HOST_INTERNAL}
+	# respond @api_host "Hello, world! - api host"
 
 	@web_host {
 		host {$WEB_HOST_EXTERNAL}
 	}
 
-	# reverse_proxy @web_host http://{$WEB_HOST_INTERNAL}
-	respond @web_host "Hello, world! - web host"
+	reverse_proxy @web_host http://{$WEB_HOST_INTERNAL}
+	# respond @web_host "Hello, world! - web host"
 }
