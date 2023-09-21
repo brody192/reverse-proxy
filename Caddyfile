@@ -33,6 +33,4 @@
 	}
 
 	reverse_proxy @web_host http://{$WEB_HOST_INTERNAL} # proxy the host matched by the named matcher to the host value specified in this environment variable
-
-	respond "No host was matched" 404 # fallback response when no host was matched
 }
